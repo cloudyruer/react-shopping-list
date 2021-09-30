@@ -1,29 +1,29 @@
 import React from 'react'
 
-function ProductItem() {
+function ProductItem({ amount, category, image, name, price, calcAmount }) {
   return (
     <div className="row border-top border-bottom">
       <div className="row main align-items-center">
         <div className="col-2">
-          <img
-            alt=""
-            className="img-fluid"
-            src="https://i.imgur.com/1GrakTl.jpg"
-          />
+          <img alt="" className="img-fluid" src={image} />
         </div>
         <div className="col">
-          <div className="row text-muted">Shirt</div>
-          <div className="row">Cotton T-shirt</div>
+          <div className="row text-muted">{category}</div>
+          <div className="row">{name}</div>
         </div>
         <div className="col">
-          <a href="#/">-</a>
-          <a href="#/" className="border">
-            1
+          <a href="#/" onClick={() => calcAmount(-1)}>
+            -
           </a>
-          <a href="#/">+</a>
+          <a href="#/" className="border">
+            {amount}
+          </a>
+          <a href="#/" onClick={() => calcAmount(1)}>
+            +
+          </a>
         </div>
         <div className="col">
-          &euro; 44.00 <span className="close">&#10005;</span>
+          &euro; {price} <span className="close">&#10005;</span>
         </div>
       </div>
     </div>

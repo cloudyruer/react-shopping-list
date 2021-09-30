@@ -61,7 +61,10 @@ function App() {
   return (
     <div className="card">
       <div className="row">
-        <OrderList />
+        <OrderList
+          productWithAmount={productWithAmount}
+          setProductWithAmount={setProductWithAmount}
+        />
         <Summary totalAmount={totalAmount} totalPrice={totalPrice} />
       </div>
     </div>
