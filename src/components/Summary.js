@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Summary() {
+function Summary({ totalAmount, totalPrice }) {
   return (
     <div className="col-md-4 summary">
       <div>
@@ -10,11 +10,11 @@ function Summary() {
       </div>
       <hr />
       <div className="row">
-        <div className="col col-style">ITEMS 3</div>
+        <div className="col col-style">ITEMS {totalAmount}</div>
       </div>
       <div className="row row-style">
         <div className="col">TOTAL PRICE</div>
-        <div className="col text-right">&euro; 137.00</div>
+        <div className="col text-right">&euro; {totalPrice}</div>
       </div>
       <button className="btn">CHECKOUT</button>
     </div>
