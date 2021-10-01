@@ -1,6 +1,14 @@
 import React from 'react'
 
-function ProductItem({ amount, category, image, name, price, calcAmount }) {
+function ProductItem({
+  amount,
+  category,
+  image,
+  name,
+  price,
+  calcAmount,
+  removeItem,
+}) {
   return (
     <div className="row border-top border-bottom">
       <div className="row main align-items-center">
@@ -23,7 +31,14 @@ function ProductItem({ amount, category, image, name, price, calcAmount }) {
           </a>
         </div>
         <div className="col">
-          &euro; {price} <span className="close">&#10005;</span>
+          &euro; {price}{' '}
+          <span
+            className="close"
+            style={{ cursor: 'pointer' }}
+            onClick={removeItem}
+          >
+            &#10005;
+          </span>
         </div>
       </div>
     </div>

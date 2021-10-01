@@ -22,6 +22,13 @@ function OrderList({ productWithAmount, setProductWithAmount }) {
           // 3. 使用新的arr設定state
           setProductWithAmount(newStateArr)
         }}
+        // NOTE 10/01
+        removeItem={() => {
+          const newFilterArr = productWithAmount.filter(
+            (_, curArrIndex) => i !== curArrIndex
+          )
+          setProductWithAmount(newFilterArr)
+        }}
       />
     )
   })
